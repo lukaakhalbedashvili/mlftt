@@ -5,6 +5,10 @@ module.exports = {
     extend: {},
     colors: {
       borderGray: "#DFDFDF",
+      headerBorderGray: "#E3E3E3",
+      primary: "#2D62ED",
+      white: "#FFFFFF",
+      black: "#000000",
     },
   },
   plugins: [],
