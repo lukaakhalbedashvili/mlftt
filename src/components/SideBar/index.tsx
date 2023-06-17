@@ -1,13 +1,16 @@
-import spellChecker from "../../assets/checked.svg";
+import SpeechToTextIcon from "../../Elements/TextToSpeechIcon";
+import SpellCheckerIcon from "../../Elements/SpellCheckerIcon";
+import TextToSpeechIcon from "../../Elements/SpeechToText";
 import edgeForSidebarItem from "../../assets/edgeForSidebarItem.svg";
 import edgeForSidebarItem2 from "../../assets/edgeForSidebarItem2.svg";
+import { IconColors, SideBarItemsEnum } from "./sideBar.interface";
 import useSideBar from "./useSideBar";
 
 const SideBar = () => {
   const { sidebarItems, setSideBarItems } = useSideBar();
 
   return (
-    <div className="w-44 bg-black pl-3 h-full">
+    <div className="w-44 bg-primary pl-3 h-full pt-32">
       <div className="flex flex-col justify-start items-start">
         {sidebarItems.map((item) => {
           return (
@@ -27,12 +30,31 @@ const SideBar = () => {
                 })
               }
             >
-              <img
-                src={spellChecker}
-                alt=""
-                style={{ fill: "white" }}
-                className={`w-5 h-3 mr-3 fill-white`}
-              />
+              <span className="mr-3">
+                {item.text === SideBarItemsEnum.SPELL_CHECKER && (
+                  <SpellCheckerIcon
+                    color={
+                      item.isActive ? IconColors.PRIMARY : IconColors.WHITE
+                    }
+                  />
+                )}
+
+                {item.text === SideBarItemsEnum.TEXT_TO_SPEECH && (
+                  <SpeechToTextIcon
+                    color={
+                      item.isActive ? IconColors.PRIMARY : IconColors.WHITE
+                    }
+                  />
+                )}
+
+                {item.text === SideBarItemsEnum.SPEECH_TO_TEXT && (
+                  <TextToSpeechIcon
+                    color={
+                      item.isActive ? IconColors.PRIMARY : IconColors.WHITE
+                    }
+                  />
+                )}
+              </span>
 
               <p className="text-xs">{item.text}</p>
 
