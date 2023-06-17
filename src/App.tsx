@@ -1,11 +1,16 @@
 import React from "react";
 import "./App.css";
 import Header from "./components/Header";
+import SideBar from "./components/SideBar";
 
 function App() {
   return (
-    <div className="App">
+    <div className="h-screen">
       <Header />
+
+      <div className="flex justify-start h-full">
+        <SideBar />
+      </div>
     </div>
   );
 }
