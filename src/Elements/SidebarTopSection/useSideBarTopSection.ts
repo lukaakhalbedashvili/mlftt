@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { SideBarItemsEnum } from "./sideBar.interface";
+import { SideBarItemsEnum } from "../../components/SideBar/sideBar.interface";
 
 const sideBarItems = [
   { text: SideBarItemsEnum.SPELL_CHECKER, isActive: true, onclick: () => {} },
