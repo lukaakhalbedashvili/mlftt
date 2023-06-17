@@ -1,5 +1,4 @@
 import React from "react";
-import useSideBar from "./useSideBarTopSection";
 import SpeechToTextIcon from "../../Elements/TextToSpeechIcon";
 import SpellCheckerIcon from "../../Elements/SpellCheckerIcon";
 import TextToSpeechIcon from "../../Elements/SpeechToText";
@@ -7,14 +6,16 @@ import edgeForSidebarItem from "../../assets/edgeForSidebarItem.svg";
 import edgeForSidebarItem2 from "../../assets/edgeForSidebarItem2.svg";
 import {
   IconColors,
-  SideBarItemsEnum,
+  SideBarTopSectionItemsEnum,
 } from "../../components/SideBar/sideBar.interface";
+import useSideBarTopSection from "./useSideBarTopSection";
 
 const SidebarTopSection = () => {
-  const { setSideBarItems, sidebarItems } = useSideBar();
+  const { setSidebarTopSectionItems, sidebarTopSectionItems } =
+    useSideBarTopSection();
   return (
     <div className="flex flex-col justify-start items-start">
-      {sidebarItems.map((item) => {
+      {sidebarTopSectionItems.map((item) => {
         return (
           <div
             key={item.text}
@@ -22,7 +23,7 @@ const SidebarTopSection = () => {
               item.isActive ? "bg-white" : ""
             } flex items-center rounded-l-full pl-4 h-10 w-full relative cursor-pointer`}
             onClick={() =>
-              setSideBarItems((state) => {
+              setSidebarTopSectionItems((state) => {
                 return state.map((item2) => {
                   if (item2 === item) {
                     return { ...item2, isActive: true };
@@ -33,26 +34,32 @@ const SidebarTopSection = () => {
             }
           >
             <span className="mr-3">
-              {item.text === SideBarItemsEnum.SPELL_CHECKER && (
+              {item.text === SideBarTopSectionItemsEnum.SPELL_CHECKER && (
                 <SpellCheckerIcon
                   color={item.isActive ? IconColors.PRIMARY : IconColors.WHITE}
                 />
               )}
 
-              {item.text === SideBarItemsEnum.TEXT_TO_SPEECH && (
+              {item.text === SideBarTopSectionItemsEnum.TEXT_TO_SPEECH && (
                 <SpeechToTextIcon
                   color={item.isActive ? IconColors.PRIMARY : IconColors.WHITE}
                 />
               )}
 
-              {item.text === SideBarItemsEnum.SPEECH_TO_TEXT && (
+              {item.text === SideBarTopSectionItemsEnum.SPEECH_TO_TEXT && (
                 <TextToSpeechIcon
                   color={item.isActive ? IconColors.PRIMARY : IconColors.WHITE}
                 />
               )}
             </span>
 
-            <p className="text-xs">{item.text}</p>
+            <p
+              className={`text-xs ${
+                item.isActive ? "text-primary" : "text-white"
+              }`}
+            >
+              {item.text}
+            </p>
 
             {item.isActive && (
               <>
