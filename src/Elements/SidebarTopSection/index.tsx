@@ -20,7 +20,7 @@ const SidebarTopSection = () => {
           <div
             key={item.text}
             className={`${
-              item.isActive ? "bg-white" : ""
+              item.isActive ? "bg-mainBackground" : ""
             } flex items-center rounded-l-full pl-4 h-10 w-full relative cursor-pointer`}
             onClick={() =>
               setSidebarTopSectionItems((state) => {
