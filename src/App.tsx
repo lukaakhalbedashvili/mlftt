@@ -2,6 +2,7 @@ import ActionButtonsSections from "./components/ActionButtonsSections";
 import Header from "./components/Header";
 import ShortcutSection from "./components/ShortcutSection";
 import SideBar from "./components/SideBar";
+import mainLogo from "./assets/mainIcon.svg";
 
 function App() {
   return (
@@ -21,6 +22,8 @@ function App() {
 
         <ShortcutSection />
       </div>
+
+      <img src={mainLogo} alt="" className="absolute right-16 bottom-16" />
     </div>
   );
 }
