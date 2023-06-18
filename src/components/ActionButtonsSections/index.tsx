@@ -7,7 +7,7 @@ import arrow from "../../assets/arrow.svg";
 
 const ActionButtonsSections = () => {
   return (
-    <div className="border-actionBtnsBorder border-b h-fit pb-3 w-full pt-16 pl-28 flex items-center mr-32">
+    <div className="border-actionBtnsBorder border-b h-fit pb-3 w-full pt-16 pl-28 flex items-center">
       <button className="bg-primary flex items-center px-5 py-2 rounded-md">
         <SpellCheckerIcon color={IconColors.WHITE} />
 

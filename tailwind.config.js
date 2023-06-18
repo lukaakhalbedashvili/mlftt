@@ -10,6 +10,7 @@ module.exports = {
       white: "#FFFFFF",
       black: "#000000",
       actionBtnsBorder: "#EDEDED",
+      textInputGray: "#6F6F6F",
     },
   },
   plugins: [],

@@ -10,7 +10,13 @@ function App() {
       <div className="flex justify-start h-full">
         <SideBar />
 
-        <ActionButtonsSections />
+        <div className="mr-32">
+          <ActionButtonsSections />
+
+          <p className="text-xs ml-28 text-textInputGray mt-12 border-l border-textInputGray pl-1">
+            Type or paste (⌘+V) something here.
+          </p>
+        </div>
       </div>
     </div>
   );
