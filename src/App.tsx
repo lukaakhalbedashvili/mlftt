@@ -1,10 +1,11 @@
 import ActionButtonsSections from "./components/ActionButtonsSections";
 import Header from "./components/Header";
+import ShortcutSection from "./components/ShortcutSection";
 import SideBar from "./components/SideBar";
 
 function App() {
   return (
-    <div className="h-screen">
+    <div className="h-screen bg-mainBackground relative">
       <Header />
 
       <div className="flex justify-start h-full">
@@ -17,6 +18,8 @@ function App() {
             Type or paste (⌘+V) something here.
           </p>
         </div>
+
+        <ShortcutSection />
       </div>
     </div>
   );

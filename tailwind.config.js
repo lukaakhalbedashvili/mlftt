@@ -11,6 +11,8 @@ module.exports = {
       black: "#000000",
       actionBtnsBorder: "#EDEDED",
       textInputGray: "#6F6F6F",
+      mainBackground: "#f8f8f8",
+      popupBlue: "#001849",
     },
   },
   plugins: [],
