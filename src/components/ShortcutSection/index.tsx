@@ -23,33 +23,109 @@ const ShortcutSection = () => {
         </div>
       </div>
 
-      <img src={italicIcon} alt="" className="mr-8" />
+      <div className="mr-8 relative cursor-pointer group">
+        <img src={italicIcon} alt="" />
 
-      <img
-        src={uIcon}
-        alt=""
-        className="pr-6 border-r-2 border-borderGray mr-5"
-      />
+        <div className="absolute left-1/2 transform -translate-x-1/2 top-5 flex-col justify-start items-center group-hover:flex hidden">
+          <img src={arrow} alt="" className="relative top-[1px]" />
 
-      <img src={burgerIcon} alt="" className="mr-8" />
+          <p className="text-xs bg-popupBlue text-white p-[6px] rounded-md whitespace-nowrap">
+            Bold Ctrl+B
+          </p>
+        </div>
+      </div>
 
-      <img
-        src={burgerIcon}
-        alt=""
-        className="pr-6 border-r-2 border-borderGray mr-5"
-      />
+      <div className="group relative cursor-pointer">
+        <img src={uIcon} alt="" />
 
-      <img src={h1} alt="" className="mr-8" />
+        <div className="absolute left-1/2 transform -translate-x-1/2 top-5 flex-col justify-start items-center group-hover:flex hidden">
+          <img src={arrow} alt="" className="relative top-[1px]" />
 
-      <img src={h2} alt="" className="pr-6 border-r-2 border-borderGray mr-5" />
+          <p className="text-xs bg-popupBlue text-white p-[6px] rounded-md whitespace-nowrap">
+            Bold Ctrl+B
+          </p>
+        </div>
+      </div>
 
-      <img
-        src={officeIcon}
-        alt=""
-        className="pr-6 border-r-2 border-borderGray mr-5"
-      />
+      <span className="border-r-2 border-borderGray w-[1px] h-[18px] mx-6"></span>
 
-      <img src={tIcon} alt="" />
+      <div className="mr-8  group relative cursor-pointer">
+        <img src={burgerIcon} alt="" />
+
+        <div className="absolute left-1/2 transform -translate-x-1/2 top-5 flex-col justify-start items-center group-hover:flex hidden">
+          <img src={arrow} alt="" className="relative top-[1px]" />
+
+          <p className="text-xs bg-popupBlue text-white p-[6px] rounded-md whitespace-nowrap">
+            Bold Ctrl+B
+          </p>
+        </div>
+      </div>
+
+      <div className="group relative cursor-pointer">
+        <img src={burgerIcon} alt="" />
+
+        <div className="absolute left-1/2 transform -translate-x-1/2 top-5 flex-col justify-start items-center group-hover:flex hidden">
+          <img src={arrow} alt="" className="relative top-[1px]" />
+
+          <p className="text-xs bg-popupBlue text-white p-[6px] rounded-md whitespace-nowrap">
+            Bold Ctrl+B
+          </p>
+        </div>
+      </div>
+
+      <span className="border-r-2 border-borderGray w-[1px] h-[18px] mx-6"></span>
+
+      <div className="group relative cursor-pointer mr-8">
+        <img src={h1} alt="" />
+
+        <div className="absolute left-1/2 transform -translate-x-1/2 top-5 flex-col justify-start items-center group-hover:flex hidden">
+          <img src={arrow} alt="" className="relative top-[1px]" />
+
+          <p className="text-xs bg-popupBlue text-white p-[6px] rounded-md whitespace-nowrap">
+            Bold Ctrl+B
+          </p>
+        </div>
+      </div>
+
+      <div className="group relative cursor-pointer">
+        <img src={h2} alt="" />
+
+        <div className="absolute left-1/2 transform -translate-x-1/2 top-5 flex-col justify-start items-center group-hover:flex hidden">
+          <img src={arrow} alt="" className="relative top-[1px]" />
+
+          <p className="text-xs bg-popupBlue text-white p-[6px] rounded-md whitespace-nowrap">
+            Bold Ctrl+B
+          </p>
+        </div>
+      </div>
+
+      <span className="border-r-2 border-borderGray w-[1px] h-[18px] mx-6"></span>
+
+      <div className="group relative cursor-pointer">
+        <img src={officeIcon} alt="" />
+
+        <div className="absolute left-1/2 transform -translate-x-1/2 top-5 flex-col justify-start items-center group-hover:flex hidden">
+          <img src={arrow} alt="" className="relative top-[1px]" />
+
+          <p className="text-xs bg-popupBlue text-white p-[6px] rounded-md whitespace-nowrap">
+            Bold Ctrl+B
+          </p>
+        </div>
+      </div>
+
+      <span className="border-r-2 border-borderGray w-[1px] h-[18px] mx-6"></span>
+
+      <div className="group relative cursor-pointer">
+        <img src={tIcon} alt="" />
+
+        <div className="absolute left-1/2 transform -translate-x-1/2 top-5 flex-col justify-start items-center group-hover:flex hidden">
+          <img src={arrow} alt="" className="relative top-[1px]" />
+
+          <p className="text-xs bg-popupBlue text-white p-[6px] rounded-md whitespace-nowrap">
+            Bold Ctrl+B
+          </p>
+        </div>
+      </div>
 
       <div className="bg-white px-5 py-1 text-xs ml-64">
         628 characters, 103 words
