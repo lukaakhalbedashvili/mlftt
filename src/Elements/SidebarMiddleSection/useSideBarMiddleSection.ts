@@ -20,6 +20,8 @@ const sideBarMiddleItems = [
 ];
 
 const useSideBarMiddleSection = () => {
+  document.body.style.overflow = "hidden";
+
   const [sidebarMiddleSectionItems, setSidebarMiddleSectionItems] =
     useState(sideBarMiddleItems);
 

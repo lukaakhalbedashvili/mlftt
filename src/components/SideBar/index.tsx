@@ -1,3 +1,4 @@
+import SidebarBottomSection from "../../Elements/SidebarBottomSection";
 import SidebarMiddleSection from "../../Elements/SidebarMiddleSection";
 import SidebarTopSection from "../../Elements/SidebarTopSection";
 
@@ -7,6 +8,8 @@ const SideBar = () => {
       <SidebarTopSection />
 
       <SidebarMiddleSection />
+
+      <SidebarBottomSection />
     </div>
   );
 };
