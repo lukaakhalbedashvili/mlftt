@@ -1,3 +1,4 @@
+import ActionButtonsSections from "./components/ActionButtonsSections";
 import Header from "./components/Header";
 import SideBar from "./components/SideBar";
 
@@ -8,6 +9,8 @@ function App() {
 
       <div className="flex justify-start h-full">
         <SideBar />
+
+        <ActionButtonsSections />
       </div>
     </div>
   );
