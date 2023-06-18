@@ -1,27 +1,27 @@
 import { useState } from "react";
 import { SideBarMiddleSectionItemsEnum } from "../../components/SideBar/sideBar.interface";
+import settingsIcon from "../../assets/settings.svg";
+import facebookIcon from "../../assets/facebook.svg";
+import contactSupportIcon from "../../assets/contactSupportIcon.svg";
 
-const sideBarItems = [
+const sideBarMiddleItems = [
   {
     text: SideBarMiddleSectionItemsEnum.SETTING,
-    isActive: true,
-    onclick: () => {},
+    icon: settingsIcon,
   },
   {
     text: SideBarMiddleSectionItemsEnum.FACEBOOK,
-    isActive: false,
-    onclick: () => {},
+    icon: facebookIcon,
   },
   {
     text: SideBarMiddleSectionItemsEnum.CONTACT_SUPPORT,
-    isActive: false,
-    onclick: () => {},
+    icon: contactSupportIcon,
   },
 ];
 
 const useSideBarMiddleSection = () => {
   const [sidebarMiddleSectionItems, setSidebarMiddleSectionItems] =
-    useState(sideBarItems);
+    useState(sideBarMiddleItems);
 
   return { sidebarMiddleSectionItems, setSidebarMiddleSectionItems };
 };

@@ -14,7 +14,7 @@ const SidebarTopSection = () => {
   const { setSidebarTopSectionItems, sidebarTopSectionItems } =
     useSideBarTopSection();
   return (
-    <div className="flex flex-col justify-start items-start">
+    <div className="flex flex-col justify-start items-start ml-3">
       {sidebarTopSectionItems.map((item) => {
         return (
           <div
