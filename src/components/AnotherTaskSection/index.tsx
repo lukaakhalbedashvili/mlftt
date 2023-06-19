@@ -27,14 +27,12 @@ const AnotherTaskSection = () => {
           })
           .catch((err) => {
             console.log(err.response.status);
-            err?.response?.status && renewAccessToken();
+            err?.response?.status === 401 && renewAccessToken();
           });
       };
 
       sendTextToSpeechToBack();
     }
-
-    onResult() {}
   }
 
   const getAudio = new GetAudio(
