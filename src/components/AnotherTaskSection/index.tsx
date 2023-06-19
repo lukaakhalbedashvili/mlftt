@@ -1,5 +1,11 @@
 import { useEffect } from "react";
-import { sendLoginRequest, sendTextToAudioRequest } from "./anotherTaks.utils";
+import {
+  getSplitTextAsArray,
+  renewAccessToken,
+  sendLoginRequest,
+  sendTextToAudioRequest,
+} from "./anotherTaks.utils";
+import { LOCAL_STORAGE_KEYS } from "./anotherTask.interface";
 
 const AnotherTaskSection = () => {
   class GetAudio {
@@ -10,47 +16,22 @@ const AnotherTaskSection = () => {
     text;
 
     start() {
-      const maxLength = 230;
-      const minLength = 150;
+      let SplitTextArray = getSplitTextAsArray(this.text);
 
-      let textToWorkOn = this.text;
-      let textToSendArray = [];
-
-      const sliceAndSet = (rangeToSearch: string, signOfSplit: string) => {
-        textToSendArray.push(
-          textToWorkOn.slice(
-            0,
-            rangeToSearch.indexOf(signOfSplit) + minLength + 1
-          )
-        );
-
-        textToWorkOn = textToWorkOn.slice(
-          rangeToSearch.indexOf(signOfSplit) + minLength + 1,
-          textToWorkOn.length
-        );
+      const sendTextToSpeechToBack = () => {
+        sendTextToAudioRequest(SplitTextArray[0])
+          .then((res) => {
+            SplitTextArray.shift();
+            console.log(res.data);
+            SplitTextArray.length > 0 && sendTextToSpeechToBack();
+          })
+          .catch((err) => {
+            console.log(err.response.status);
+            err?.response?.status && renewAccessToken();
+          });
       };
 
-      while (textToWorkOn.length > 0) {
-        const rangeToSearch = textToWorkOn.slice(minLength, maxLength);
-
-        if (textToWorkOn.length <= minLength) {
-          textToSendArray.push(textToWorkOn);
-          textToWorkOn = "";
-        } else if (rangeToSearch.includes(".")) {
-          sliceAndSet(rangeToSearch, ".");
-        } else if (rangeToSearch.includes("!")) {
-          sliceAndSet(rangeToSearch, "!");
-        } else if (rangeToSearch.includes("?")) {
-          sliceAndSet(rangeToSearch, "?");
-        } else if (rangeToSearch.includes(";")) {
-          sliceAndSet(rangeToSearch, ";");
-        } else if (rangeToSearch.includes(",")) {
-          sliceAndSet(rangeToSearch, ";");
-        } else if (rangeToSearch.includes(" ")) {
-          sliceAndSet(rangeToSearch, ";");
-        }
-      }
-      console.log(textToSendArray);
+      sendTextToSpeechToBack();
     }
 
     onResult() {}
@@ -62,17 +43,11 @@ const AnotherTaskSection = () => {
 
   useEffect(() => {
     getAudio.start();
+    !localStorage.getItem(LOCAL_STORAGE_KEYS.ACCESS_TOKEN) &&
+      sendLoginRequest();
   }, []);
 
-  return (
-    <div>
-      <input />
-
-      <button onClick={sendLoginRequest}>login</button>
-
-      <button>get me audio</button>
-    </div>
-  );
+  return <div>open console</div>;
 };
 
 export default AnotherTaskSection;

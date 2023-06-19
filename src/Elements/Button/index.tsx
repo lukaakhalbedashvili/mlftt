@@ -13,7 +13,6 @@ const Button: FC<ButtonProps> = ({
   backgroundColor,
   textColor,
 }) => {
-  console.log(backgroundColor);
   return (
     <button
       className={`${backgroundColor} px-5 py-2 ${textColor} border border-borderGray rounded-lg text-sm flex items-center w-fit`}
